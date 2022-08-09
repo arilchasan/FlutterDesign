@@ -16,10 +16,47 @@ class Home extends StatefulWidget {
 class _MyWidgetState extends State<Home> {
   @override
   Widget build(BuildContext context) {
+    int currentIndex = 0;
     return Scaffold(
       appBar: AppBar(
-        title: Text('Dana Clone'),
+        title: Text(''),
         backgroundColor: Colors.blueAccent,
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        backgroundColor: Colors.blueAccent,
+        selectedItemColor: Color.fromARGB(255, 255, 255, 255),
+        unselectedItemColor: Color.fromARGB(255, 255, 255, 255),
+        selectedFontSize: 14,
+        unselectedFontSize: 14,
+        currentIndex: currentIndex,
+        onTap: (value) {
+          setState(() {
+            currentIndex = value;
+          });
+        },
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.payment_rounded),
+            label: 'Riwayat',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.qr_code_scanner_rounded),
+            label: 'Pay',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.mail_outline_rounded),
+            label: 'Pocket',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.account_circle_rounded),
+            label: 'Saya',
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
@@ -107,7 +144,7 @@ class _MyWidgetState extends State<Home> {
                     ],
                   ),
                   const Divider(
-                    color: Colors.white,
+                    color: Color.fromARGB(255, 255, 255, 255),
                   ),
                   Row(
                     children: [
@@ -134,6 +171,7 @@ class _MyWidgetState extends State<Home> {
             SizedBox(
               height: 6,
             ),
+            //Fitur
             Container(
               margin: EdgeInsets.only(left: 20),
               child: Column(
@@ -183,6 +221,7 @@ class _MyWidgetState extends State<Home> {
                   SizedBox(
                     height: 6,
                   ),
+                  //Reward
                   Container(
                     margin: EdgeInsets.only(left: 2),
                     child: Column(
@@ -306,6 +345,7 @@ class _MyWidgetState extends State<Home> {
                         SizedBox(
                           height: 10,
                         ),
+                        //Pengaturan
                         Container(
                           margin: EdgeInsets.only(right: 220),
                           child: Column(
@@ -436,6 +476,7 @@ class _MyWidgetState extends State<Home> {
                         SizedBox(
                           height: 10,
                         ),
+                        //Informasi
                         Container(
                           margin: EdgeInsets.only(right: 240),
                           child: Column(
@@ -566,6 +607,7 @@ class _MyWidgetState extends State<Home> {
                         SizedBox(
                           height: 20,
                         ),
+                        //Keluar
                         Center(
                           child: Container(
                             width: 200,
